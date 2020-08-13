@@ -20,7 +20,6 @@ import java.security.NoSuchAlgorithmException;
 public class Demo {
     public static void main(String[] args) throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException, NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, InvalidBucketNameException, ErrorResponseException, RegionConflictException {
 
-
         MinioClient minioClient = MinioClient.builder().endpoint("172.17.5.231", 9001, false).credentials("minioadmin", "minioadmin").build();
         boolean exists = minioClient.bucketExists(BucketExistsArgs.builder().bucket("picture").build());
 
