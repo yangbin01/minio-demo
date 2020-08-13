@@ -22,12 +22,8 @@ public class Demo {
 
         MinioClient minioClient = MinioClient.builder().endpoint("172.17.5.231", 9001, false).credentials("minioadmin", "minioadmin").build();
         boolean exists = minioClient.bucketExists(BucketExistsArgs.builder().bucket("picture").build());
-
-
         System.out.println(exists);
-
         minioClient.makeBucket(MakeBucketArgs.builder().bucket("picture5").build());
-
         File f = new File("C:\\Users\\杨彬\\Downloads\\kubernetes-client-linux-amd64.tar.gz");
         minioClient.putObject(PutObjectArgs.builder().bucket("picture5").object(f.getName()).stream(new FileInputStream(f), f.length(), -1).build());
 
