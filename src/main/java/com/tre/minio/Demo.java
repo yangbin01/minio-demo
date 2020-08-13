@@ -27,5 +27,6 @@ public class Demo {
         File f = new File("C:\\Users\\杨彬\\Downloads\\kubernetes-client-linux-amd64.tar.gz");
         minioClient.putObject(PutObjectArgs.builder().bucket("picture5").object(f.getName()).stream(new FileInputStream(f), f.length(), -1).build());
 
+        System.out.println("qw");
     }
 }
