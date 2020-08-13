@@ -23,6 +23,7 @@ public class Demo {
         MinioClient minioClient = MinioClient.builder().endpoint("172.17.5.231", 9001, false).credentials("minioadmin", "minioadmin").build();
         boolean exists = minioClient.bucketExists(BucketExistsArgs.builder().bucket("picture").build());
 
+
         System.out.println(exists);
 
         minioClient.makeBucket(MakeBucketArgs.builder().bucket("picture5").build());
